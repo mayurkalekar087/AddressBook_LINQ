@@ -12,8 +12,7 @@ namespace AddressBook_LINQ
         {
             //DataTable 
             DataTable dataTable = new DataTable();
-
-            dataTable.Columns.Add("AddressBookName", typeof(string));
+            
             dataTable.Columns.Add("FirstName", typeof(string));
             dataTable.Columns.Add("LastName", typeof(string));
             dataTable.Columns.Add("Address", typeof(string));
@@ -22,13 +21,12 @@ namespace AddressBook_LINQ
             dataTable.Columns.Add("Zip", typeof(int));
             dataTable.Columns.Add("PhoneNumber", typeof(long));
             dataTable.Columns.Add("Email", typeof(string));
-            dataTable.Columns.Add("AddressBookType", typeof(string));
 
-            dataTable.Rows.Add("MyBook-1" ,"Ismael ", "Whitlatch", "2319  Burton Avenue", "Memphis", "Tennessee", 38117, 9017658987, "sa5bxlla2e@temporary-mail.net","Friend");
-            dataTable.Rows.Add("MyBook-2","Christopher ", "Forst", "2846  Tori Lane", "Salt Lake City", "Utah", 84113, 8015870002, "ctmgz50esj@temporary-mail.net","Family");
-            dataTable.Rows.Add("MyBook-3", "David ", "Washington", "3379  Echo Lane", "Memphis", "New Mexico", 88352, 2699626511, "wkephpw9q2@temporary-mail.net","Friend");
-            dataTable.Rows.Add("MyBook-4", "Byron ", "Daniels", "4385  West Street", "Grand Rapids", "Michigan", 49546, 6165758233, "6y4ug4knmib@temporary - mail.net","Profession");
-            dataTable.Rows.Add("MyBook-5", "James ", "Juarez", "12564  Clay Street", "Indianapolis", "Indiana", 46214, 3174103617, "penlzpd00f@temporary - mail.net","Profession");
+            dataTable.Rows.Add( "Ismael ", "Whitlatch", "2319  Burton Avenue", "Memphis", "Tennessee", 38117, 9017658987, "sa5bxlla2e@temporary-mail.net");
+            dataTable.Rows.Add("Christopher ", "Forst", "2846  Tori Lane", "Salt Lake City", "Utah", 84113, 8015870002, "ctmgz50esj@temporary-mail.net");
+            dataTable.Rows.Add("David ", "Washington", "3379  Echo Lane", "Memphis", "New Mexico", 88352, 2699626511, "wkephpw9q2@temporary-mail.net");
+            dataTable.Rows.Add("Byron ", "Daniels", "4385  West Street", "Grand Rapids", "Michigan", 49546, 6165758233, "6y4ug4knmib@temporary - mail.net");
+            dataTable.Rows.Add("James ", "Juarez", "12564  Clay Street", "Indianapolis", "Indiana", 46214, 3174103617, "penlzpd00f@temporary - mail.net");
             return dataTable;
         }
         public void DisplayContacts(DataTable addresstable)
