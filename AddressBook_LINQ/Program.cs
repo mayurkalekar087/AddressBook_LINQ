@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 
 namespace AddressBook_LINQ
 {
@@ -9,7 +10,9 @@ namespace AddressBook_LINQ
             Console.WriteLine("Welcome To Address Book Using LINQ !");
             Console.WriteLine("------------------------------------");
             AddressBookTable addressBookTable = new AddressBookTable();
-            
+
+            DataTable data = addressBookTable.CreateAddressBookDataTable();
+            addressBookTable.DisplayContacts(data);
         }
     }
 }
