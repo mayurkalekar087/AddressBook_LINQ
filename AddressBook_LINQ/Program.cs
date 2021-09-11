@@ -24,8 +24,6 @@ namespace AddressBook_LINQ
 
             addressBookTable.SortContactsByLastName(dataTable);
 
-            addressBookTable.CheckCountByType(dataTable);
-
             addressBookTable.DisplayContacts(dataTable);
            
 
