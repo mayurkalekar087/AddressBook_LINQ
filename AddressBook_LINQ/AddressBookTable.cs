@@ -37,8 +37,8 @@ namespace AddressBook_LINQ
 
             foreach (var contact in contacts)
             {
-                Console.WriteLine("First Name : " + contact.Field<string>("FirstName") + " - " + "Last Name : " + contact.Field<string>("LastName") + " - " + "Address : " + contact.Field<string>("Address") + " - " + "City : " + contact.Field<string>("City") + " - " + "State : " + contact.Field<string>("State")
-                    + " - " + "Zip : " + contact.Field<int>("Zip") + " - " + "Phone Number : " + contact.Field<long>("PhoneNumber") + " - " + "Email : " + contact.Field<string>("Email") + " ");
+                Console.WriteLine("AddressBook Name: " + contact.Field<string>("AddressBookName") + " - " + "First Name : " + contact.Field<string>("FirstName") + " - " + "Last Name : " + contact.Field<string>("LastName") + " - " + "Address : " + contact.Field<string>("Address") + " - " + "City : " + contact.Field<string>("City") + " - " + "State : " + contact.Field<string>("State")
+                    + " - " + "Zip : " + contact.Field<int>("Zip") + " - " + "Phone Number : " + contact.Field<long>("PhoneNumber") + " - " + "Email : " + contact.Field<string>("Email") + " - " + "AddressBook Type : " + contact.Field<string>("AddressBookType") + "  ");
                 Console.WriteLine();
             }
         }
@@ -128,6 +128,16 @@ namespace AddressBook_LINQ
             var Friends = table.Rows.Cast<DataRow>()
                              .Where(x => x["AddressBookType"].Equals("Friends")).Count();
             Console.WriteLine("'Friends' : {0} ", Friends);
+        }
+        //UC 11
+        public void AddPersonToFriendsAndFamily(DataTable table)
+        {
+            var contacts = table.Rows.Cast<DataRow>()
+                            .Where(x => x["LastName"].Equals("Whitlatch"));
+
+            Console.WriteLine("\nSuccessfull Added Person To Both Friend & Family!");
+
+            DisplayContacts(contacts.CopyToDataTable());
         }
     }
 }

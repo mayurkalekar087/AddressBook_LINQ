@@ -15,17 +15,21 @@ namespace AddressBook_LINQ
             DataTable dataTable = addressBookTable.CreateAddressBookDataTable();
 
             addressBookTable.EditContact(dataTable);
-           
+
             addressBookTable.DeleteContact(dataTable);
-           
+
             addressBookTable.RetrieveContactByCityOrState(dataTable);
 
             addressBookTable.CheckSizeByCityOrState(dataTable);
 
             addressBookTable.SortContactsByLastName(dataTable);
 
+            addressBookTable.CheckCountByType(dataTable);
+
+            addressBookTable.AddPersonToFriendsAndFamily(dataTable);
+
             addressBookTable.DisplayContacts(dataTable);
-           
+
         }
     }
 }
