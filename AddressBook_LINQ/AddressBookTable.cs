@@ -41,9 +41,9 @@ namespace AddressBook_LINQ
             }
         }
         //UC 4
-        public void EditContact(DataTable dataTable)
+        public void EditContact(DataTable table)
         {
-            var contacts = dataTable.AsEnumerable().Where(x => x.Field<string>("FirstName") == "James");
+            var contacts = table.AsEnumerable().Where(x => x.Field<string>("LastName") == "Daniels");
             int count = contacts.Count();
             if (count > 0)
             {
@@ -53,13 +53,32 @@ namespace AddressBook_LINQ
                     contact.SetField("City", "Washington Dc");
                     contact.SetField("State", "America");
                 }
-                Console.WriteLine("Contact is Changed Successfullu");
-                DisplayContacts(contacts.CopyToDataTable());
+                Console.WriteLine("Contact is Changed Successfully");
+                
             }
             else
             {
                 Console.WriteLine("Contact Does not Found");
+                DisplayContacts(table);
             }
         }
+        public void DeleteContact(DataTable table)
+        {
+            var contacts = table.AsEnumerable().Where(x => x.Field<string>("LastName") == "Forst");
+            int count = contacts.Count();
+            if (count > 0)
+            {
+                foreach (var row in contacts.ToList())
+                {
+                    row.Delete();
+                    Console.WriteLine("The Contact is deleted succesfully.");
+                }
+            }
+            else
+                Console.WriteLine("Contact is Not in the List");
+            DisplayContacts(table);
+        }
+
     }
 }
+
