@@ -23,7 +23,9 @@ namespace AddressBook_LINQ
             addressBookTable.CheckSizeByCityOrState(dataTable);
 
             addressBookTable.SortContactsByLastName(dataTable);
-            
+
+            addressBookTable.CheckCountByType(dataTable);
+
             addressBookTable.DisplayContacts(dataTable);
            
 
