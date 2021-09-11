@@ -107,7 +107,13 @@ namespace AddressBook_LINQ
 
             Console.WriteLine("Size : {0} ", contacts);
         }
-
+        //UC 8
+        public void SortContactsByLastName(DataTable table)
+        {
+            var contacts = table.Rows.Cast<DataRow>()
+                           .OrderBy(x => x.Field<string>("LastName"));
+            DisplayContacts(contacts.CopyToDataTable());
+        }
     }
 }
 
