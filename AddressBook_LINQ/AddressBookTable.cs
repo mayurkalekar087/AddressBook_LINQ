@@ -116,19 +116,6 @@ namespace AddressBook_LINQ
                            .OrderBy(x => x.Field<string>("LastName"));
             DisplayContacts(contacts.CopyToDataTable());
         }
-        //UC 9
-        public void CheckCountByType(DataTable table)
-        {
-            var Profession = table.Rows.Cast<DataRow>()
-                                         .Where(x => x["AddressBookType"].Equals("Profession")).Count();
-            Console.WriteLine("'Profession' : {0} ", Profession);
-            var Family = table.Rows.Cast<DataRow>()
-                             .Where(x => x["AddressBookType"].Equals("Family")).Count();
-            Console.WriteLine("'Family' : {0} ", Family);
-            var Friends = table.Rows.Cast<DataRow>()
-                             .Where(x => x["AddressBookType"].Equals("Friends")).Count();
-            Console.WriteLine("'Profession' : {0} ", Friends);
-        }
     }
 }
 
